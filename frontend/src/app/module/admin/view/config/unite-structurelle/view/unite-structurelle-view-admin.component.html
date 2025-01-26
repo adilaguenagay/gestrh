@@ -1,0 +1,80 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'uniteStructurelle.tabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="{{'uniteStructurelle.tabPan' | translate}}">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'uniteStructurelle.code' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'uniteStructurelle.code' | translate}}" autofocus  id="1" [ngModel]="item.code">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'uniteStructurelle.libelle' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'uniteStructurelle.libelle' | translate}}" autofocus  id="2" [ngModel]="item.libelle">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'uniteStructurelle.uniteMere' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'uniteStructurelle.uniteMere' | translate}}" autofocus  id="3" [ngModel]="item.uniteMere?.code">
+                    </div>
+                </div>
+            </p-tabPanel>
+
+            <p-tabPanel header="{{'uniteStructurelle.employee' | translate}}">
+                <div class="grid">
+                    <div class="col">
+                        <div class="card">
+                            <p-table [value]="item.employee" [scrollable]="true" scrollHeight="200px">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Ppr</th>
+                                        <th>Nom</th>
+                                        <th>Prenom</th>
+                                        <th>Lieu naissance</th>
+                                        <th>Photo url</th>
+                                        <th>Telephone</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th>Local</th>
+                                        <th>Situation familiale</th>
+                                        <th>Genre</th>
+                                        <th>Grade</th>
+                                        <th>Fonction</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-p>
+                                    <tr>
+                                        <td>{{p.ppr}}</td>
+                                        <td>{{p.nom}}</td>
+                                        <td>{{p.prenom}}</td>
+                                        <td>{{p.lieuNaissance}}</td>
+                                        <td>{{p.photoUrl}}</td>
+                                        <td>{{p.telephone}}</td>
+                                        <td>{{p.address}}</td>
+                                        <td>{{p.email}}</td>
+                                        <td>{{p.local?.libelle}}</td>
+                                        <td>{{p.situationFamiliale?.libelle}}</td>
+                                        <td>{{p.genre?.libelle}}</td>
+                                        <td>{{p.grade?.libelle}}</td>
+                                        <td>{{p.fonction?.libelle}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="p-flexbox">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

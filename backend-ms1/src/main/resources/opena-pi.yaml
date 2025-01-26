@@ -1,0 +1,799 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /affectations:
+    get:
+      summary: List all affectations
+      operationId: listAffectations
+      tags:
+        - affectations
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of affectations
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Affectations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a affectation
+      operationId: createAffectations
+      tags:
+        - affectations
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /affectations/{affectationId}:
+    get:
+      summary: Info for a specific affectation
+      operationId: showAffectationById
+      tags:
+        - affectations
+      parameters:
+        - name: affectationId
+          in: path
+          required: true
+          description: The id of the affectation to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Affectations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /situationFamiliales:
+    get:
+      summary: List all situationFamiliales
+      operationId: listSituationFamiliales
+      tags:
+        - situationFamiliales
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of situationFamiliales
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/SituationFamiliales'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a situationFamiliale
+      operationId: createSituationFamiliales
+      tags:
+        - situationFamiliales
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /situationFamiliales/{situationFamilialeId}:
+    get:
+      summary: Info for a specific situationFamiliale
+      operationId: showSituationFamilialeById
+      tags:
+        - situationFamiliales
+      parameters:
+        - name: situationFamilialeId
+          in: path
+          required: true
+          description: The id of the situationFamiliale to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/SituationFamiliales'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /grades:
+    get:
+      summary: List all grades
+      operationId: listGrades
+      tags:
+        - grades
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of grades
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Grades'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a grade
+      operationId: createGrades
+      tags:
+        - grades
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /grades/{gradeId}:
+    get:
+      summary: Info for a specific grade
+      operationId: showGradeById
+      tags:
+        - grades
+      parameters:
+        - name: gradeId
+          in: path
+          required: true
+          description: The id of the grade to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Grades'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /fonctions:
+    get:
+      summary: List all fonctions
+      operationId: listFonctions
+      tags:
+        - fonctions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of fonctions
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Fonctions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a fonction
+      operationId: createFonctions
+      tags:
+        - fonctions
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /fonctions/{fonctionId}:
+    get:
+      summary: Info for a specific fonction
+      operationId: showFonctionById
+      tags:
+        - fonctions
+      parameters:
+        - name: fonctionId
+          in: path
+          required: true
+          description: The id of the fonction to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Fonctions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeDiplomes:
+    get:
+      summary: List all typeDiplomes
+      operationId: listTypeDiplomes
+      tags:
+        - typeDiplomes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeDiplomes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeDiplomes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeDiplome
+      operationId: createTypeDiplomes
+      tags:
+        - typeDiplomes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeDiplomes/{typeDiplomeId}:
+    get:
+      summary: Info for a specific typeDiplome
+      operationId: showTypeDiplomeById
+      tags:
+        - typeDiplomes
+      parameters:
+        - name: typeDiplomeId
+          in: path
+          required: true
+          description: The id of the typeDiplome to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeDiplomes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /locals:
+    get:
+      summary: List all locals
+      operationId: listLocals
+      tags:
+        - locals
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of locals
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Locals'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a local
+      operationId: createLocals
+      tags:
+        - locals
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /locals/{localId}:
+    get:
+      summary: Info for a specific local
+      operationId: showLocalById
+      tags:
+        - locals
+      parameters:
+        - name: localId
+          in: path
+          required: true
+          description: The id of the local to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Locals'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /genres:
+    get:
+      summary: List all genres
+      operationId: listGenres
+      tags:
+        - genres
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of genres
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Genres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a genre
+      operationId: createGenres
+      tags:
+        - genres
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /genres/{genreId}:
+    get:
+      summary: Info for a specific genre
+      operationId: showGenreById
+      tags:
+        - genres
+      parameters:
+        - name: genreId
+          in: path
+          required: true
+          description: The id of the genre to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Genres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /employees:
+    get:
+      summary: List all employees
+      operationId: listEmployees
+      tags:
+        - employees
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of employees
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Employees'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a employee
+      operationId: createEmployees
+      tags:
+        - employees
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /employees/{employeeId}:
+    get:
+      summary: Info for a specific employee
+      operationId: showEmployeeById
+      tags:
+        - employees
+      parameters:
+        - name: employeeId
+          in: path
+          required: true
+          description: The id of the employee to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Employees'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /uniteStructurelles:
+    get:
+      summary: List all uniteStructurelles
+      operationId: listUniteStructurelles
+      tags:
+        - uniteStructurelles
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of uniteStructurelles
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/UniteStructurelles'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a uniteStructurelle
+      operationId: createUniteStructurelles
+      tags:
+        - uniteStructurelles
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /uniteStructurelles/{uniteStructurelleId}:
+    get:
+      summary: Info for a specific uniteStructurelle
+      operationId: showUniteStructurelleById
+      tags:
+        - uniteStructurelles
+      parameters:
+        - name: uniteStructurelleId
+          in: path
+          required: true
+          description: The id of the uniteStructurelle to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/UniteStructurelles'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /diplomes:
+    get:
+      summary: List all diplomes
+      operationId: listDiplomes
+      tags:
+        - diplomes
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of diplomes
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Diplomes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a diplome
+      operationId: createDiplomes
+      tags:
+        - diplomes
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /diplomes/{diplomeId}:
+    get:
+      summary: Info for a specific diplome
+      operationId: showDiplomeById
+      tags:
+        - diplomes
+      parameters:
+        - name: diplomeId
+          in: path
+          required: true
+          description: The id of the diplome to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Diplomes'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+
+
+definitions:
+  Affectation:
+    type: "object"
+    required:
+      - id
+    properties:
+      id:
+        type: int
+  Affectations:
+    type: array
+    items:
+      $ref: '#/definitions/Affectation'
+  SituationFamiliale:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  SituationFamiliales:
+    type: array
+    items:
+      $ref: '#/definitions/SituationFamiliale'
+  Grade:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  Grades:
+    type: array
+    items:
+      $ref: '#/definitions/Grade'
+  Fonction:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  Fonctions:
+    type: array
+    items:
+      $ref: '#/definitions/Fonction'
+  TypeDiplome:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  TypeDiplomes:
+    type: array
+    items:
+      $ref: '#/definitions/TypeDiplome'
+  Local:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  Locals:
+    type: array
+    items:
+      $ref: '#/definitions/Local'
+  Genre:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  Genres:
+    type: array
+    items:
+      $ref: '#/definitions/Genre'
+  Employee:
+    type: "object"
+    required:
+      - id
+      - ppr
+      - nom
+      - prenom
+      - lieuNaissance
+      - photoUrl
+      - telephone
+      - address
+      - email
+    properties:
+      id:
+        type: int
+      ppr:
+        type: string
+      nom:
+        type: string
+      prenom:
+        type: string
+      lieuNaissance:
+        type: string
+      photoUrl:
+        type: string
+      telephone:
+        type: string
+      address:
+        type: string
+      email:
+        type: string
+  Employees:
+    type: array
+    items:
+      $ref: '#/definitions/Employee'
+  UniteStructurelle:
+    type: "object"
+    required:
+      - id
+      - code
+      - libelle
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      libelle:
+        type: string
+  UniteStructurelles:
+    type: array
+    items:
+      $ref: '#/definitions/UniteStructurelle'
+  Diplome:
+    type: "object"
+    required:
+      - id
+      - anneeObtention
+      - specialie
+      - organisme
+    properties:
+      id:
+        type: int
+      anneeObtention:
+        type: int
+      specialie:
+        type: string
+      organisme:
+        type: string
+  Diplomes:
+    type: array
+    items:
+      $ref: '#/definitions/Diplome'
+
+  Error:
+    type: "object"
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

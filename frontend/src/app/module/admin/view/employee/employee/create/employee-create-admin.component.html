@@ -1,0 +1,203 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'employee.tabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'employee.tabPan' | translate}}">
+                                <div class="grid">
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="1">{{'employee.ppr' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.ppr' | translate}}" id="1" [(ngModel)]="item.ppr"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validEmployeePpr}"  />
+                                                    <small class='p-error' *ngIf='!validEmployeePpr'>Ppr is obligatory.</small>
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="2">{{'employee.nom' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.nom' | translate}}" id="2" [(ngModel)]="item.nom"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="3">{{'employee.prenom' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.prenom' | translate}}" id="3" [(ngModel)]="item.prenom"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="4">{{'employee.lieuNaissance' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.lieuNaissance' | translate}}" id="4" [(ngModel)]="item.lieuNaissance"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="5">{{'employee.photoUrl' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.photoUrl' | translate}}" id="5" [(ngModel)]="item.photoUrl"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="6">{{'employee.telephone' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.telephone' | translate}}" id="6" [(ngModel)]="item.telephone"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="7">{{'employee.address' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.address' | translate}}" id="7" [(ngModel)]="item.address"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="8">{{'employee.email' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.email' | translate}}" id="8" [(ngModel)]="item.email"
+                                                             />
+                                                    
+                                                </div>
+
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="9">{{'employee.local' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="locals" [(ngModel)]="item.local" id="9" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'employee.local' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="10">{{'employee.situationFamiliale' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="situationFamiliales" [(ngModel)]="item.situationFamiliale" id="10" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'employee.situationFamiliale' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="11">{{'employee.genre' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="genres" [(ngModel)]="item.genre" id="11" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'employee.genre' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="12">{{'employee.grade' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="grades" [(ngModel)]="item.grade" id="12" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'employee.grade' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="13">{{'employee.fonction' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="fonctions" [(ngModel)]="item.fonction" id="13" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'employee.fonction' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                            <div class="field col-11 md:col-6">
+                                                <label for="14">{{'employee.uniteStructurelle' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="uniteStructurelles" [(ngModel)]="item.uniteStructurelle" id="14" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="code" placeholder="{{'employee.uniteStructurelle' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+
+                                </div>
+                            </p-tabPanel>
+                                    <p-tabPanel header="{{'employee.diplome' | translate}}">
+                                                <div class="p-col">
+                                                    <div class="grid">
+                                                                    <div class="field col-12 md:col-6">
+                                                                        <label for="1">Annee obtention</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="anneeObtention" placeholder="Annee obtention"  [(ngModel)]="diplomeElement.anneeObtention"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-11 md:col-6">
+                                                                        <label>Type</label>
+                                                                        <p-dropdown  appendTo="body"  [options]="types" [(ngModel)]="diplomeElement.type"
+                                                                                     id="2"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="id"
+                                                                                     placeholder="Type"  >
+                                                                        </p-dropdown>
+                                                                        
+                                                                    </div>
+
+                                                                    <div class="field col-12 md:col-6">
+                                                                        <label for="3">Specialie</label>
+                                                                        <input class="mb-2 mr-2" type="text" pInputText placeholder="Specialie"
+                                                                               id="3" [(ngModel)]="diplomeElement.specialie" autofocus   >
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-12 md:col-6">
+                                                                        <label for="4">Organisme</label>
+                                                                        <input class="mb-2 mr-2" type="text" pInputText placeholder="Organisme"
+                                                                               id="4" [(ngModel)]="diplomeElement.organisme" autofocus   >
+                                                                        
+                                                                    </div>
+                                                        <div class="field col-12 md:col-1">
+                                                            <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addDiplome()"></button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="p-col">
+                                                    <div class="card">
+                                                        <p-table [value]="item.diplome" [scrollable]="true" scrollHeight="200px">
+                                                            <ng-template pTemplate="header">
+                                                                <tr>
+                                                                                <th>Annee obtention</th>
+                                                                                <th>Type</th>
+                                                                                <th>Specialie</th>
+                                                                                <th>Organisme</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </ng-template>
+                                                            <ng-template pTemplate="body" let-p let-i="rowIndex">
+                                                                <tr>
+                                                                                <td>{{p.anneeObtention}}</td>
+                                                                            <td>{{p.type?.id}}</td>
+                                                                                <td>{{p.specialie}}</td>
+                                                                                <td>{{p.organisme}}</td>
+                                                                    <td>
+                                                                        <button (click)="deleteDiplome(p,i)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                        <button (click)="editDiplome(p,i)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </ng-template>
+                                                        </p-table>
+                                                    </div>
+
+                                                </div>
+                                    </p-tabPanel>
+
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-flexbox">
+
+                            <button pButton pRipple  label="{{'validate' | translate}}"  icon="pi pi-check"  (click)="save()"></button>
+
+
+                            <button pButton pRipple  label="{{'cancel' | translate}}" icon="pi pi-times" class="p-button-outlined" (click)="hideCreateDialog()"></button>
+
+
+                </div>
+            </ng-template>
+
+    </p-dialog>

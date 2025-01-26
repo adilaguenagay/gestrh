@@ -1,0 +1,17 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+            <include file="classpath:db/migration/changelog/affectation/Affectation.xml"/>
+        <include file="classpath:db/migration/changelog/config/SituationFamiliale.xml"/>
+        <include file="classpath:db/migration/changelog/config/Grade.xml"/>
+        <include file="classpath:db/migration/changelog/config/Fonction.xml"/>
+        <include file="classpath:db/migration/changelog/diplome/TypeDiplome.xml"/>
+        <include file="classpath:db/migration/changelog/config/Local.xml"/>
+        <include file="classpath:db/migration/changelog/config/Genre.xml"/>
+        <include file="classpath:db/migration/changelog/employee/Employee.xml"/>
+        <include file="classpath:db/migration/changelog/config/UniteStructurelle.xml"/>
+        <include file="classpath:db/migration/changelog/diplome/Diplome.xml"/>
+
+</databaseChangeLog>

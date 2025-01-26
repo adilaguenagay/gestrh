@@ -1,0 +1,115 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="employee">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="ppr" type="VARCHAR(500)"/>
+        <column name="nom" type="VARCHAR(500)"/>
+        <column name="prenom" type="VARCHAR(500)"/>
+        <column name="lieu_naissance" type="VARCHAR(500)"/>
+        <column name="photo_url" type="VARCHAR(500)"/>
+        <column name="telephone" type="VARCHAR(500)"/>
+        <column name="address" type="VARCHAR(500)"/>
+        <column name="email" type="VARCHAR(500)"/>
+
+        <column name="local_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="situation_familiale_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="genre_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="grade_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="fonction_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="unite_structurelle_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="employee"
+              baseColumnNames="local_id"
+              referencedTableName="local"
+              referencedColumnNames="id"
+              constraintName="fk_employee_local"/>
+      <addForeignKeyConstraint
+              baseTableName="employee"
+              baseColumnNames="situation_familiale_id"
+              referencedTableName="situation_familiale"
+              referencedColumnNames="id"
+              constraintName="fk_employee_situation_familiale"/>
+      <addForeignKeyConstraint
+              baseTableName="employee"
+              baseColumnNames="genre_id"
+              referencedTableName="genre"
+              referencedColumnNames="id"
+              constraintName="fk_employee_genre"/>
+      <addForeignKeyConstraint
+              baseTableName="employee"
+              baseColumnNames="grade_id"
+              referencedTableName="grade"
+              referencedColumnNames="id"
+              constraintName="fk_employee_grade"/>
+      <addForeignKeyConstraint
+              baseTableName="employee"
+              baseColumnNames="fonction_id"
+              referencedTableName="fonction"
+              referencedColumnNames="id"
+              constraintName="fk_employee_fonction"/>
+      <addForeignKeyConstraint
+              baseTableName="employee"
+              baseColumnNames="unite_structurelle_id"
+              referencedTableName="unite_structurelle"
+              referencedColumnNames="id"
+              constraintName="fk_employee_unite_structurelle"/>
+
+  </changeSet>
+
+    <!-- Create Sequence for ContainerType -->
+  <changeSet id="3" author="your-name">
+    <createSequence sequenceName="employee_seq" startValue="1" incrementBy="1"/>
+  </changeSet>
+
+  <!-- Load Data from CSV -->
+  <changeSet id="4" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/employee/Employee.csv"
+            tableName="employee">
+      <column name="id" type="NUMERIC"/>
+          <column name="ppr" type="STRING"/>
+          <column name="nom" type="STRING"/>
+          <column name="prenom" type="STRING"/>
+          <column name="lieu_naissance" type="STRING"/>
+          <column name="photo_url" type="STRING"/>
+          <column name="telephone" type="STRING"/>
+          <column name="address" type="STRING"/>
+          <column name="email" type="STRING"/>
+        <column name="local" type="BIGINT"/>
+        <column name="situation_familiale" type="BIGINT"/>
+        <column name="genre" type="BIGINT"/>
+        <column name="grade" type="BIGINT"/>
+        <column name="fonction" type="BIGINT"/>
+        <column name="unite_structurelle" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

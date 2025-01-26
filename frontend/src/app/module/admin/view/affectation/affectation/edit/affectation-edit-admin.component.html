@@ -1,0 +1,42 @@
+    <p-dialog [(visible)]="editDialog" [style]="{width: '70vw'}" header="{{'affectation.tabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+        <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="{{'affectation.tabPan' | translate}}">
+                        <div class="grid">
+
+                                    <div class="field col-11 md:col-6">
+                                        <label for="1">{{'affectation.employee' | translate}}</label>
+                                        <p-dropdown  appendTo="body"  [options]="employees" [(ngModel)]="item.employee" id="1" [filter]="true" filterMatchMode="contains"
+                                                     [showClear]="true" optionLabel="ppr" placeholder="{{'affectation.employee' | translate}}"  >
+                                        </p-dropdown>
+                                        
+                                    </div>
+
+                                    <div class="field col-11 md:col-6">
+                                        <label for="2">{{'affectation.uniteMere' | translate}}</label>
+                                        <p-dropdown  appendTo="body"  [options]="uniteMeres" [(ngModel)]="item.uniteMere" id="2" [filter]="true" filterMatchMode="contains"
+                                                     [showClear]="true" optionLabel="code" placeholder="{{'affectation.uniteMere' | translate}}"  >
+                                        </p-dropdown>
+                                        
+                                    </div>
+
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+
+        </ng-template>
+
+        <ng-template pTemplate="footer" >
+            <div class="p-flexbox">
+
+                    <button pButton pRipple  label="{{'validate' | translate}}"  icon="pi pi-check"  (click)="edit()"></button>
+
+
+                        <button pButton pRipple  label="{{'cancel' | translate}}" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+
+
+            </div>
+        </ng-template>
+
+    </p-dialog>

@@ -1,0 +1,256 @@
+{
+    "from-to": "العناصر من {first} إلى {last} (الإجمالي {totalRecords})",
+    "new": "جديد",
+    "search": "بحث",
+    "export": "تصدير",
+    "validate": "التحقق",
+    "search": "البحث...",
+    "delete": "حذف",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "next": "التالي",
+    "yes": "نعم",
+    "no": "لا",
+    "actions": "الإجراءات",
+    "confirm": "تأكيد",
+    "creation": "إنشاء",
+    "list": "قائمة",
+
+    "actionPermission": {
+        "reference": "المرجع",
+        "libelle": "التسمية",
+        "actionPermission": "إذن الإجراء",
+        "tabPan": "إذن الإجراء",
+        "header": "قائمة أذونات الإجراءات",
+        "deleteActionPermissionConfirmationMessage": "هل أنت متأكد أنك تريد حذف إذن الإجراء؟",
+        "deleteActionPermissionsConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+    "modelPermissionUser": {
+        "actionPermission": "إذن الإجراء",
+        "actionPermissionPlaceHolder": "اختر إذن الإجراء",
+        "actionPermissionPlaceHolderFilter": "البحث حسب إذن الإجراء",
+        "modelPermission": "إذن النموذج",
+        "modelPermissionPlaceHolder": "اختر إذن النموذج",
+        "modelPermissionPlaceHolderFilter": "البحث حسب إذن النموذج",
+        "value": "القيمة",
+        "user": "المستخدم",
+        "userPlaceHolder": "اختر مستخدمًا",
+        "userPlaceHolderFilter": "البحث حسب المستخدم",
+        "subAttribute": "السمة الفرعية",
+        "modelPermissionUser": "إذن مستخدم النموذج",
+        "tabPan": "إذن مستخدم النموذج",
+        "header": "قائمة مستخدمي إذن النموذج",
+        "deleteModelPermissionUserConfirmationMessage": "هل أنت متأكد أنك تريد حذف مستخدم إذن النموذج؟",
+        "deleteModelPermissionUsersConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+    "role": {
+        "authority": "السلطة",
+        "role": "الدور",
+        "tabPan": "الدور",
+        "header": "قائمة الأدوار",
+        "deleteRoleConfirmationMessage": "هل أنت متأكد أنك تريد حذف الدور؟",
+        "deleteRolesConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+    "roleUser": {
+        "role": "الدور",
+        "rolePlaceHolder": "اختر دورًا",
+        "rolePlaceHolderFilter": "البحث حسب الدور",
+        "user": "المستخدم",
+        "userPlaceHolder": "اختر مستخدمًا",
+        "userPlaceHolderFilter": "البحث حسب المستخدم",
+        "roleUser": "دور المستخدم",
+        "tabPan": "دور المستخدم",
+        "header": "قائمة مستخدمي الدور",
+        "deleteRoleUserConfirmationMessage": "هل أنت متأكد أنك تريد حذف مستخدم الدور؟",
+        "deleteRoleUsersConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+    "user": {
+        "credentialsNonExpired": "صلاحية الاعتماد غير منتهية",
+        "enabled": "مفعل",
+        "email": "البريد الإلكتروني",
+        "accountNonExpired": "الحساب غير منتهي",
+        "accountNonLocked": "الحساب غير مقفل",
+        "username": "اسم المستخدم",
+        "password": "كلمة المرور",
+        "passwordChanged": "تم تغيير كلمة المرور",
+        "modelPermissionUsers": "مستخدمو إذن النموذج",
+        "roleUsers": "مستخدمو الدور",
+        "RoleUsersPlaceHolder": "حدد عدة أدوار",
+        "user": "المستخدم",
+        "tabPan": "المستخدم",
+        "header": "قائمة المستخدمين",
+        "deleteUserConfirmationMessage": "هل أنت متأكد أنك تريد حذف المستخدم؟",
+        "deleteUsersConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+    },
+
+	"modelPermission": {
+		"reference": "المرجع",
+		"libelle": "التسمية",
+		"modelPermission": "إذن النموذج",
+		"tabPan": "إذن النموذج",
+		"header": "قائمة أذونات النماذج",
+		"deleteModelPermissionConfirmationMessage": "هل أنت متأكد أنك تريد حذف إذن النموذج؟",
+		"deleteModelPermissionsConfirmationMessage": "هل أنت متأكد أنك تريد حذف العناصر المحددة؟"
+	},
+
+
+
+    "affectation":{
+        "employee": "Employee",
+        "employeePlaceHolder": "Select a Employee",
+        "employeePlaceHolderFilter": "Search by Employee",
+        "uniteMere": "Unite mere",
+        "uniteMerePlaceHolder": "Select a Unite mere",
+        "uniteMerePlaceHolderFilter": "Search by Unite mere",
+        "affectation": "Affectation",
+        "tabPan": "Affectation",
+        "header": "Liste des affectations",
+        "deleteAffectationConfirmationMessage": "Are you sure you want to delete affectation",
+        "deleteAffectationsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "situationFamiliale":{
+        "code": "Code",
+        "libelle": "Libelle",
+        "situationFamiliale": "Situation familiale",
+        "tabPan": "Situation familiale",
+        "header": "Liste des situation familiales",
+        "deleteSituationFamilialeConfirmationMessage": "Are you sure you want to delete situation familiale",
+        "deleteSituationFamilialesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "grade":{
+        "code": "Code",
+        "libelle": "Libelle",
+        "grade": "Grade",
+        "tabPan": "Grade",
+        "header": "Liste des grades",
+        "deleteGradeConfirmationMessage": "Are you sure you want to delete grade",
+        "deleteGradesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "fonction":{
+        "code": "Code",
+        "libelle": "Libelle",
+        "fonction": "Fonction",
+        "tabPan": "Fonction",
+        "header": "Liste des fonctions",
+        "deleteFonctionConfirmationMessage": "Are you sure you want to delete fonction",
+        "deleteFonctionsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "typeDiplome":{
+        "code": "Code",
+        "libelle": "Libelle",
+        "typeDiplome": "Type diplome",
+        "tabPan": "Type diplome",
+        "header": "Liste des type diplomes",
+        "deleteTypeDiplomeConfirmationMessage": "Are you sure you want to delete type diplome",
+        "deleteTypeDiplomesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "local":{
+        "code": "Code",
+        "libelle": "Libelle",
+        "local": "Local",
+        "tabPan": "Local",
+        "header": "Liste des locals",
+        "deleteLocalConfirmationMessage": "Are you sure you want to delete local",
+        "deleteLocalsConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "genre":{
+        "code": "Code",
+        "libelle": "Libelle",
+        "genre": "Genre",
+        "tabPan": "Genre",
+        "header": "Liste des genres",
+        "deleteGenreConfirmationMessage": "Are you sure you want to delete genre",
+        "deleteGenresConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "employee":{
+        "ppr": "Ppr",
+        "nom": "Nom",
+        "prenom": "Prenom",
+        "lieuNaissance": "Lieu naissance",
+        "photoUrl": "Photo url",
+        "telephone": "Telephone",
+        "address": "Address",
+        "email": "Email",
+        "local": "Local",
+        "localPlaceHolder": "Select a Local",
+        "localPlaceHolderFilter": "Search by Local",
+        "situationFamiliale": "Situation familiale",
+        "situationFamilialePlaceHolder": "Select a Situation familiale",
+        "situationFamilialePlaceHolderFilter": "Search by Situation familiale",
+        "genre": "Genre",
+        "genrePlaceHolder": "Select a Genre",
+        "genrePlaceHolderFilter": "Search by Genre",
+        "grade": "Grade",
+        "gradePlaceHolder": "Select a Grade",
+        "gradePlaceHolderFilter": "Search by Grade",
+        "fonction": "Fonction",
+        "fonctionPlaceHolder": "Select a Fonction",
+        "fonctionPlaceHolderFilter": "Search by Fonction",
+        "uniteStructurelle": "Unite structurelle",
+        "uniteStructurellePlaceHolder": "Select a Unite structurelle",
+        "uniteStructurellePlaceHolderFilter": "Search by Unite structurelle",
+        "diplome": "Diplome",
+        "employee": "Employee",
+        "tabPan": "Employee",
+        "header": "Liste des employees",
+        "deleteEmployeeConfirmationMessage": "Are you sure you want to delete employee",
+        "deleteEmployeesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "uniteStructurelle":{
+        "code": "Code",
+        "libelle": "Libelle",
+        "uniteMere": "Unite mere",
+        "uniteMerePlaceHolder": "Select a Unite mere",
+        "uniteMerePlaceHolderFilter": "Search by Unite mere",
+        "employee": "Employee",
+        "uniteStructurelle": "Unite structurelle",
+        "tabPan": "Unite structurelle",
+        "header": "Liste des unite structurelles",
+        "deleteUniteStructurelleConfirmationMessage": "Are you sure you want to delete unite structurelle",
+        "deleteUniteStructurellesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+
+    "diplome":{
+        "anneeObtention": "Annee obtention",
+        "anneeObtentionMin": "Annee obtention Min",
+        "anneeObtentionMax": "Annee obtention Max",
+        "type": "Type",
+        "typePlaceHolder": "Select a Type",
+        "typePlaceHolderFilter": "Search by Type",
+        "specialie": "Specialie",
+        "organisme": "Organisme",
+        "employee": "Employee",
+        "employeePlaceHolder": "Select a Employee",
+        "employeePlaceHolderFilter": "Search by Employee",
+        "diplome": "Diplome",
+        "tabPan": "Diplome",
+        "header": "Liste des diplomes",
+        "deleteDiplomeConfirmationMessage": "Are you sure you want to delete diplome",
+        "deleteDiplomesConfirmationMessage": "Are you sure you want to delete the selected elements"
+    },
+
+"appName": "GED"
+}
+
+

@@ -1,0 +1,319 @@
+<div class="grid"  *ngIf="listActionIsValid">
+    <div class="col-12">
+        <p-toast></p-toast>
+        <div class="card">
+            <p-toolbar styleClass="mb-4">
+                <ng-template pTemplate="left">
+                                        <button pButton pRipple label=" {{'new' | translate}}" icon="pi pi-plus" class="p-button-info mr-2 mb-2" (click)="openCreate()" *ngIf="createActionIsValid"></button>
+                    <button [disabled]="isSelectionDisabled()" pButton pRipple label=" {{'delete' | translate}}" icon="pi pi-trash" class="p-button-danger mr-2 mb-2" (click)=deleteMultiple()  *ngIf="deleteActionIsValid"></button>
+                    <button pButton pRipple label=" {{'search' | translate}}" icon="pi pi-{{findByCriteriaShow?'angle-down':'angle-right'}}" class="p-button-secondary mr-2 mb-2" (click)="this.showSearch()"></button>
+                </ng-template>
+                <ng-template pTemplate="right">
+                    <div class="flex">
+                        <p-splitButton label=" {{'export' | translate}}" icon="pi pi-download" styleClass="p-button-secondary" [model]="excelPdfButons"></p-splitButton>
+                    </div>
+                </ng-template>
+
+            </p-toolbar>
+            <p-toolbar *ngIf="findByCriteriaShow">
+
+                <div class="col-12">
+                    <div class="flex flex-wrap p-fluid col-12">
+                       <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="1">{{'employee.ppr' | translate}}</label>
+                            <input  class="w-full"  pInputText id="1" type="text"  [(ngModel)]="criteria.pprLike">
+                        </div>
+                       <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="2">{{'employee.nom' | translate}}</label>
+                            <input  class="w-full"  pInputText id="2" type="text"  [(ngModel)]="criteria.nomLike">
+                        </div>
+                       <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="3">{{'employee.prenom' | translate}}</label>
+                            <input  class="w-full"  pInputText id="3" type="text"  [(ngModel)]="criteria.prenomLike">
+                        </div>
+                       <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="4">{{'employee.lieuNaissance' | translate}}</label>
+                            <input  class="w-full"  pInputText id="4" type="text"  [(ngModel)]="criteria.lieuNaissanceLike">
+                        </div>
+                       <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="5">{{'employee.photoUrl' | translate}}</label>
+                            <input  class="w-full"  pInputText id="5" type="text"  [(ngModel)]="criteria.photoUrlLike">
+                        </div>
+                       <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="6">{{'employee.telephone' | translate}}</label>
+                            <input  class="w-full"  pInputText id="6" type="text"  [(ngModel)]="criteria.telephoneLike">
+                        </div>
+                       <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="7">{{'employee.address' | translate}}</label>
+                            <input  class="w-full"  pInputText id="7" type="text"  [(ngModel)]="criteria.addressLike">
+                        </div>
+                       <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="8">{{'employee.email' | translate}}</label>
+                            <input  class="w-full"  pInputText id="8" type="text"  [(ngModel)]="criteria.emailLike">
+                        </div>
+                        <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="9-2">{{'employee.local' | translate}}</label>
+                            <p-dropdown [options]="locals" [(ngModel)]="criteria.local" id="9" [filter]="true" class="p-fluid"
+                                        [showClear]="true"  placeholder="{{'employee.local' | translate}}" optionLabel="libelle">
+                            </p-dropdown>
+                        </div>
+                        <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="10-2">{{'employee.situationFamiliale' | translate}}</label>
+                            <p-dropdown [options]="situationFamiliales" [(ngModel)]="criteria.situationFamiliale" id="10" [filter]="true" class="p-fluid"
+                                        [showClear]="true"  placeholder="{{'employee.situationFamiliale' | translate}}" optionLabel="libelle">
+                            </p-dropdown>
+                        </div>
+                        <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="11-2">{{'employee.genre' | translate}}</label>
+                            <p-dropdown [options]="genres" [(ngModel)]="criteria.genre" id="11" [filter]="true" class="p-fluid"
+                                        [showClear]="true"  placeholder="{{'employee.genre' | translate}}" optionLabel="libelle">
+                            </p-dropdown>
+                        </div>
+                        <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="12-2">{{'employee.grade' | translate}}</label>
+                            <p-dropdown [options]="grades" [(ngModel)]="criteria.grade" id="12" [filter]="true" class="p-fluid"
+                                        [showClear]="true"  placeholder="{{'employee.grade' | translate}}" optionLabel="libelle">
+                            </p-dropdown>
+                        </div>
+                        <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="13-2">{{'employee.fonction' | translate}}</label>
+                            <p-dropdown [options]="fonctions" [(ngModel)]="criteria.fonction" id="13" [filter]="true" class="p-fluid"
+                                        [showClear]="true"  placeholder="{{'employee.fonction' | translate}}" optionLabel="libelle">
+                            </p-dropdown>
+                        </div>
+                        <div class="lg:col-3 md:col-6 sm:col-12 mb-4">
+                            <label  class="font-bold block mb-2" for="14-2">{{'employee.uniteStructurelle' | translate}}</label>
+                            <p-dropdown [options]="uniteStructurelles" [(ngModel)]="criteria.uniteStructurelle" id="14" [filter]="true" class="p-fluid"
+                                        [showClear]="true"  placeholder="{{'employee.uniteStructurelle' | translate}}" optionLabel="code">
+                            </p-dropdown>
+                        </div>
+                    </div>
+                    <div [style]="{ marginTop : '1rem', display: 'flex', justifyContent: 'flex-end' }">
+                        <button pButton pRipple label="{{'validate' | translate}}" icon="pi pi-sort-amount-down" class="p-button-info mr-2" (click)="findPaginatedByCriteria()"></button>
+                    </div>
+                </div>
+
+
+            </p-toolbar>
+
+                <p-table #dt [value]="items" [columns]="cols" [rows]="8" [paginator]="false"
+                         [globalFilterFields]="['ppr', 'nom', 'prenom', 'lieuNaissance', 'photoUrl', 'telephone', 'address', 'email', 'locallibelle', 'situationFamilialelibelle', 'genrelibelle', 'gradelibelle', 'fonctionlibelle', 'uniteStructurellecode']" [(selection)]="selections"
+                         [rowHover]="true" dataKey="id" styleClass="p-datatable-customers"
+                         currentPageReportTemplate="{{'les éléments de {first} à {last} sur {totalRecords} ' | translate}}"
+                         [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" selectionMode="multiple">
+                    <ng-template pTemplate="caption">
+                        <div class="flex flex-column flex-row justify-content-between table-header">
+                            <h5 class="p-m-0">{{'employee.header' | translate}}</h5>
+                            <span class="p-input-icon-left ml-auto">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" placeholder="{{'searchInput' | translate}}" (input)="dt.filterGlobal($event.target.value, 'contains')"/>
+                        </span>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width: 3rem">
+                                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                            </th>
+                                    
+                        <th pSortableColumn="ppr">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.ppr' | translate}}</span>
+                                <p-sortIcon field="ppr"></p-sortIcon>
+                                <p-columnFilter type="text" field="element.ppr" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                                
+                                    
+                        <th pSortableColumn="nom">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.nom' | translate}}</span>
+                                <p-sortIcon field="nom"></p-sortIcon>
+                                <p-columnFilter type="text" field="element.nom" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                                
+                                    
+                        <th pSortableColumn="prenom">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.prenom' | translate}}</span>
+                                <p-sortIcon field="prenom"></p-sortIcon>
+                                <p-columnFilter type="text" field="element.prenom" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                                
+                                    
+                        <th pSortableColumn="lieuNaissance">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.lieuNaissance' | translate}}</span>
+                                <p-sortIcon field="lieuNaissance"></p-sortIcon>
+                                <p-columnFilter type="text" field="element.lieuNaissance" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                                
+                                    
+                        <th pSortableColumn="photoUrl">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.photoUrl' | translate}}</span>
+                                <p-sortIcon field="photoUrl"></p-sortIcon>
+                                <p-columnFilter type="text" field="element.photoUrl" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                                
+                                    
+                        <th pSortableColumn="telephone">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.telephone' | translate}}</span>
+                                <p-sortIcon field="telephone"></p-sortIcon>
+                                <p-columnFilter type="text" field="element.telephone" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                                
+                                    
+                        <th pSortableColumn="address">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.address' | translate}}</span>
+                                <p-sortIcon field="address"></p-sortIcon>
+                                <p-columnFilter type="text" field="element.address" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                                
+                                    
+                        <th pSortableColumn="email">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.email' | translate}}</span>
+                                <p-sortIcon field="email"></p-sortIcon>
+                                <p-columnFilter type="text" field="element.email" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                                
+                                    
+                        <th pSortableColumn="local">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.local' | translate}}</span>
+                                <p-sortIcon field="local"></p-sortIcon>
+                            </div>
+                        </th>
+                                
+                                    <!-- 
+                        <th pSortableColumn="situationFamiliale">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.situationFamiliale' | translate}}</span>
+                                <p-sortIcon field="situationFamiliale"></p-sortIcon>
+                            </div>
+                        </th>
+                                --> 
+                                    <!-- 
+                        <th pSortableColumn="genre">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.genre' | translate}}</span>
+                                <p-sortIcon field="genre"></p-sortIcon>
+                            </div>
+                        </th>
+                                --> 
+                                    <!-- 
+                        <th pSortableColumn="grade">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.grade' | translate}}</span>
+                                <p-sortIcon field="grade"></p-sortIcon>
+                            </div>
+                        </th>
+                                --> 
+                                    <!-- 
+                        <th pSortableColumn="fonction">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.fonction' | translate}}</span>
+                                <p-sortIcon field="fonction"></p-sortIcon>
+                            </div>
+                        </th>
+                                --> 
+                                    <!-- 
+                        <th pSortableColumn="uniteStructurelle">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>{{'employee.uniteStructurelle' | translate}}</span>
+                                <p-sortIcon field="uniteStructurelle"></p-sortIcon>
+                            </div>
+                        </th>
+                                --> 
+                            <th>Actions</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-element>
+                        <tr>
+                            <td>
+                                <p-tableCheckbox [value]="element"></p-tableCheckbox>
+                            </td>
+                                    
+                        <td>{{element.ppr}}</td>
+                            
+                                    
+                        <td>{{element.nom}}</td>
+                            
+                                    
+                        <td>{{element.prenom}}</td>
+                            
+                                    
+                        <td>{{element.lieuNaissance}}</td>
+                            
+                                    
+                        <td>{{element.photoUrl}}</td>
+                            
+                                    
+                        <td>{{element.telephone}}</td>
+                            
+                                    
+                        <td>{{element.address}}</td>
+                            
+                                    
+                        <td>{{element.email}}</td>
+                            
+                                    
+                        <td>{{element.local?.libelle}}</td>
+                            
+                                     <!-- 
+                        <td>{{element.situationFamiliale?.libelle}}</td>
+                             --> 
+                                     <!-- 
+                        <td>{{element.genre?.libelle}}</td>
+                             --> 
+                                     <!-- 
+                        <td>{{element.grade?.libelle}}</td>
+                             --> 
+                                     <!-- 
+                        <td>{{element.fonction?.libelle}}</td>
+                             --> 
+                                     <!-- 
+                        <td>{{element.uniteStructurelle?.code}}</td>
+                             --> 
+                            <td>
+                                <button pButton pRipple icon="pi pi-pencil"  class="p-button-rounded p-button-info mr-2" (click)="edit(element)"  *ngIf="editActionIsValid"></button>
+                                <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button-secondary mr-2" (click)="view(element)"  *ngIf="viewActionIsValid"></button>
+                                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger mr-2" (click)="delete(element)"  *ngIf="deleteActionIsValid"></button>
+                                <button pButton pRipple icon="pi pi-copy" class="p-button-rounded p-button-raised p-button-warning mr-2" (click)="duplicate(element)"  *ngIf="duplicateActionIsValid"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+
+                    <ng-template pTemplate="summary">
+                        <p-paginator  [rows]="10" [totalRecords]="totalRecords" (onPageChange)="onPage($event)"></p-paginator>
+                        <div class="p-d-flex p-ai-center p-jc-between">
+                            En totale il {{items ? totalRecords == 1 ? 'y a' : 'y a' : 'y a' }} {{items ? totalRecords : 0 }} {{items ? totalRecords == 1 ? 'employee' : 'employees' : 0 }}.
+                        </div>
+                    </ng-template>
+                </p-table>
+
+
+        </div>
+
+        <app-employee-create-admin  *ngIf="createDialog  && createActionIsValid"></app-employee-create-admin>
+        <app-employee-edit-admin  *ngIf="editDialog  && editActionIsValid"></app-employee-edit-admin>
+        <app-employee-view-admin  *ngIf="viewDialog  && viewActionIsValid"></app-employee-view-admin>
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    </div>
+</div>
+
+<p-card header="Permission not allowed" *ngIf="!listActionIsValid">
+    <p class="m-0">
+        You don't have permission to access !
+    </p>
+</p-card>
