@@ -16,7 +16,7 @@
                                                     <label for="2">{{'employee.nom' | translate}}</label>
                                                     <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.nom' | translate}}" id="2" [(ngModel)]="item.nom"
                                                              />
-                                                    
+
                                                 </div>
 
 
@@ -24,7 +24,7 @@
                                                     <label for="3">{{'employee.prenom' | translate}}</label>
                                                     <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.prenom' | translate}}" id="3" [(ngModel)]="item.prenom"
                                                              />
-                                                    
+
                                                 </div>
 
 
@@ -32,23 +32,23 @@
                                                     <label for="4">{{'employee.lieuNaissance' | translate}}</label>
                                                     <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.lieuNaissance' | translate}}" id="4" [(ngModel)]="item.lieuNaissance"
                                                              />
-                                                    
+
                                                 </div>
 
 
                                                 <div class="field col-12 md:col-6">
                                                     <label for="5">{{'employee.photoUrl' | translate}}</label>
-                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.photoUrl' | translate}}" id="5" [(ngModel)]="item.photoUrl"
+                                                    <input class="mb-2 mr-2" type="file" pInputText  placeholder="{{'employee.photoUrl' | translate}}" id="5" [(ngModel)]="item.photoUrl" accept="image/*"
                                                              />
-                                                    
+
                                                 </div>
 
 
                                                 <div class="field col-12 md:col-6">
                                                     <label for="6">{{'employee.telephone' | translate}}</label>
-                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.telephone' | translate}}" id="6" [(ngModel)]="item.telephone"
+                                                    <input class="mb-2 mr-2" type="tel" pInputText  placeholder="{{'employee.telephone' | translate}}" id="6" [(ngModel)]="item.telephone"
                                                              />
-                                                    
+
                                                 </div>
 
 
@@ -56,15 +56,15 @@
                                                     <label for="7">{{'employee.address' | translate}}</label>
                                                     <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.address' | translate}}" id="7" [(ngModel)]="item.address"
                                                              />
-                                                    
+
                                                 </div>
 
 
                                                 <div class="field col-12 md:col-6">
                                                     <label for="8">{{'employee.email' | translate}}</label>
-                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'employee.email' | translate}}" id="8" [(ngModel)]="item.email"
+                                                    <input class="mb-2 mr-2" type="email" pInputText  placeholder="{{'employee.email' | translate}}" id="8" [(ngModel)]="item.email"
                                                              />
-                                                    
+
                                                 </div>
 
 
@@ -73,7 +73,7 @@
                                                 <p-dropdown  appendTo="body"  [options]="locals" [(ngModel)]="item.local" id="9" [filter]="true" filterMatchMode="contains"
                                                         [showClear]="true" optionLabel="libelle" placeholder="{{'employee.local' | translate}}"  >
                                                 </p-dropdown>
-                                                
+
                                             </div>
 
                                             <div class="field col-11 md:col-6">
@@ -81,7 +81,7 @@
                                                 <p-dropdown  appendTo="body"  [options]="situationFamiliales" [(ngModel)]="item.situationFamiliale" id="10" [filter]="true" filterMatchMode="contains"
                                                         [showClear]="true" optionLabel="libelle" placeholder="{{'employee.situationFamiliale' | translate}}"  >
                                                 </p-dropdown>
-                                                
+
                                             </div>
 
                                             <div class="field col-11 md:col-6">
@@ -89,7 +89,7 @@
                                                 <p-dropdown  appendTo="body"  [options]="genres" [(ngModel)]="item.genre" id="11" [filter]="true" filterMatchMode="contains"
                                                         [showClear]="true" optionLabel="libelle" placeholder="{{'employee.genre' | translate}}"  >
                                                 </p-dropdown>
-                                                
+
                                             </div>
 
                                             <div class="field col-11 md:col-6">
@@ -97,7 +97,7 @@
                                                 <p-dropdown  appendTo="body"  [options]="grades" [(ngModel)]="item.grade" id="12" [filter]="true" filterMatchMode="contains"
                                                         [showClear]="true" optionLabel="libelle" placeholder="{{'employee.grade' | translate}}"  >
                                                 </p-dropdown>
-                                                
+
                                             </div>
 
                                             <div class="field col-11 md:col-6">
@@ -105,15 +105,15 @@
                                                 <p-dropdown  appendTo="body"  [options]="fonctions" [(ngModel)]="item.fonction" id="13" [filter]="true" filterMatchMode="contains"
                                                         [showClear]="true" optionLabel="libelle" placeholder="{{'employee.fonction' | translate}}"  >
                                                 </p-dropdown>
-                                                
+
                                             </div>
 
                                             <div class="field col-11 md:col-6">
                                                 <label for="14">{{'employee.uniteStructurelle' | translate}}</label>
                                                 <p-dropdown  appendTo="body"  [options]="uniteStructurelles" [(ngModel)]="item.uniteStructurelle" id="14" [filter]="true" filterMatchMode="contains"
-                                                        [showClear]="true" optionLabel="code" placeholder="{{'employee.uniteStructurelle' | translate}}"  >
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'employee.uniteStructurelle' | translate}}"  >
                                                 </p-dropdown>
-                                                
+
                                             </div>
 
                                 </div>
@@ -124,7 +124,7 @@
                                                                     <div class="field col-12 md:col-6">
                                                                         <label for="1">Annee obtention</label>
                                                                         <p-inputNumber class="mb-2 mr-2" id="anneeObtention" placeholder="Annee obtention"  [(ngModel)]="diplomeElement.anneeObtention"></p-inputNumber>
-                                                                        
+
                                                                     </div>
                                                                     <div class="field col-11 md:col-6">
                                                                         <label>Type</label>
@@ -132,20 +132,20 @@
                                                                                      id="2"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="id"
                                                                                      placeholder="Type"  >
                                                                         </p-dropdown>
-                                                                        
+
                                                                     </div>
 
                                                                     <div class="field col-12 md:col-6">
                                                                         <label for="3">Specialie</label>
                                                                         <input class="mb-2 mr-2" type="text" pInputText placeholder="Specialie"
                                                                                id="3" [(ngModel)]="diplomeElement.specialie" autofocus   >
-                                                                        
+
                                                                     </div>
                                                                     <div class="field col-12 md:col-6">
                                                                         <label for="4">Organisme</label>
                                                                         <input class="mb-2 mr-2" type="text" pInputText placeholder="Organisme"
                                                                                id="4" [(ngModel)]="diplomeElement.organisme" autofocus   >
-                                                                        
+
                                                                     </div>
                                                         <div class="field col-12 md:col-1">
                                                             <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addDiplome()"></button>
